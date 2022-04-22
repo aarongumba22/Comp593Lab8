@@ -10,6 +10,18 @@ def get_pokemon_info(name):
     """
     print('Getting Pokemon Info...', end='')
     
+    
+    #checks if given pokemon name is valid
+    if name == None:
+        print("Invalid name")
+        return
+    
+    name = name.strip().lower()
+    
+    if name == '':
+        print("empty name paramaerter")
+        
+        
     url="https://pokeapi.co/api/v2/pokemon/" + name
     resp_msg = requests.get(url)
     
